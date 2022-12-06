@@ -4,6 +4,7 @@ from django.db import models
 class Position(models.Model):
         title = models.CharField(verbose_name='Yangilik turi',max_length=100)
         manba = models.CharField(verbose_name='Manba',max_length=100)
+        image = models.ImageField(upload_to='%Y-%m-%d')
         def __str__(self) -> str:
               return self.title
 class New(models.Model):

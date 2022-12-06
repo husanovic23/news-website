@@ -34,7 +34,7 @@
                 <div class="d-flex justify-content-between">
                     <div class="bg-primary text-white text-center py-2" style="width: 100px;">Tranding</div>
                     <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3" style="width: calc(100% - 100px); padding-left: 90px;">
-                        <div class="text-truncate"><a class="text-secondary" href="">This site is built by Oybek Narzullayev</a></div>
+                        <div class="text-truncate"><a class="text-secondary" href="">This site is built by husanovic</a></div>
                         <div class="text-truncate"><a class="text-secondary" href="">You can also wath news by categories</a></div>
                     </div>
                 </div>
@@ -79,15 +79,21 @@
                             <a href="#" class="dropdown-item">Menu item 3</a>
                         </div>
                     </div>
-                    <a href="{% url 'cont' %}" class="nav-item nav-link">Contact</a>
+                    {% for i in category_sayt %}
+                    <a href="{% url 'cate_det' i.id %}" class="nav-item nav-link">{{i.title}}</a>
+                {% endfor %}
                 </div>
+                <form action="{% url 'serach' %}" method="GET">
+
                 <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
-                    <input type="text" class="form-control" placeholder="Keyword">
+                    <input type="text" class="form-control" name="matn" placeholder="Keyword">
                     <div class="input-group-append">
                         <button class="input-group-text text-secondary"><i
                                 class="fa fa-search"></i></button>
                     </div>
                 </div>
+            </form>
+
             </div>
         </nav>
     </div>
